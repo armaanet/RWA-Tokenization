@@ -1,0 +1,36 @@
+{
+  "name": "veri-rwa",
+  "version": "1.0.0",
+  "description": "Real-World Asset Tokenization Application",
+  "type": "module",
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network arbitrumSepolia",
+    "node": "hardhat node",
+    "test": "hardhat test",
+    "backend": "node backend/custodian-service.js",
+    "setup:env": "node scripts/setup-env.js",
+    "frontend": "node -e \"require('http').createServer((req,res)=>{res.writeHead(200,{'Content-Type':'text/html'});require('fs').createReadStream('frontend/index.html').pipe(res)}).listen(8080,()=>console.log('Frontend: http://localhost:8080'))\""
+  },
+  "keywords": [
+    "blockchain",
+    "rwa",
+    "tokenization",
+    "erc20"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.9.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.5",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "hardhat": "^2.19.0"
+  }
+}
+
